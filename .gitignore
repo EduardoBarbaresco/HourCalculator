@@ -1,0 +1,27 @@
+# Gradle and IDE
+.gradle/
+build/
+*.iml
+.idea/
+
+# Android
+app/build/
+*.apk
+*.ap_
+*.dex
+*.class
+bin/
+gen/
+
+# Sensitive data
+local.properties
+*.jks
+*.keystore
+google-services.json
+
+# System and logs
+.DS_Store
+*.log
+captures/
+.externalNativeBuild/
+.cxx/

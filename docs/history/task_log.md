@@ -1,0 +1,3 @@
+- `[x]` Modificar `ModeSelector.kt` para usar `SingleChoiceSegmentedButtonRow`
+- `[x]` Adicionar ícones aos botões de modo
+- `[x]` Fazer deploy e verificar no dispositivo

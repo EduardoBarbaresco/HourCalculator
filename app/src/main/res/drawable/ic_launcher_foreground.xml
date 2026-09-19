@@ -1,0 +1,73 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- ======================================================= -->
+    <!-- Relógio Principal - Perfeitamente Centralizado em (54, 54) -->
+    <!-- ======================================================= -->
+
+    <!-- Corpo / Fundo do Mostrador do Relógio -->
+    <path
+        android:fillColor="#1E1B4B"
+        android:strokeColor="#6366F1"
+        android:strokeWidth="3.5"
+        android:pathData="M54,54m-26,0a26,26 0,1 1,52 0a26,26 0,1 1,-52 0" />
+
+    <!-- Arco de Destaque Centesimal (0.25h / 15m) no Mostrador -->
+    <path
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:pathData="M54,28 A26,26 0 0,1 80,54" />
+
+    <!-- Ponteiro das Horas (em direção às 2h) -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round"
+        android:pathData="M54,54 L65,43" />
+
+    <!-- Ponteiro dos Minutos (em direção às 6h / 30m) -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round"
+        android:pathData="M54,54 L54,69" />
+
+    <!-- Ponto de Pivô Central -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,54m-3,0a3,3 0,1 1,6 0a3,3 0,1 1,-6 0" />
+
+    <!-- ======================================================= -->
+    <!-- Badge Matemático Flutuante no Canto Inferior Direito   -->
+    <!-- Centro em (68, 68) com borda de recorte de alto contraste-->
+    <!-- ======================================================= -->
+
+    <!-- Recorte de Borda Escura ao redor do Badge -->
+    <path
+        android:fillColor="#0F172A"
+        android:pathData="M68,68m-13,0a13,13 0,1 1,26 0a13,13 0,1 1,-26 0" />
+
+    <!-- Fundo do Badge Laranja Vibrante -->
+    <path
+        android:fillColor="#F97316"
+        android:pathData="M68,68m-11,0a11,11 0,1 1,22 0a11,11 0,1 1,-22 0" />
+
+    <!-- Símbolo de Adição (+) -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:pathData="M68,61.5 L68,67.5 M65,64.5 L71,64.5" />
+
+    <!-- Símbolo de Igual (=) -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:pathData="M65,70.5 L71,70.5 M65,73.5 L71,73.5" />
+
+</vector>
