@@ -1,5 +1,8 @@
 # Calculadora de Horas & Centesimal para Android
 
+![Texto alternativo](/docs/screenshots/app_preview.png "Título opcional")
+
+
 Aplicativo Android nativo desenvolvido em **Kotlin** e **Jetpack Compose** (Material Design 3) para cálculos de horas em formato tradicional (Sexagesimal: `HH:MM`) e conversão em tempo real para Horas Centesimais (Decimais: `0,00 h`).
 
 ---
