@@ -18,5 +18,6 @@ data class CalculatorUiState(
     val isResultState: Boolean = false,
     val history: List<CalculationRecord> = emptyList(),
     val isHistoryOpen: Boolean = false,
+    val isAboutOpen: Boolean = false,
     val errorMessage: String? = null
 )

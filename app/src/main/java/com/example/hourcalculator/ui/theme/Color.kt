@@ -26,4 +26,8 @@ val OperatorContainer = Color(0x33FF9800)
 val EqualsColor = Color(0xFF4CAF50)        // Verde para botão de igual (=)
 val ClearColor = Color(0xFFE53935)         // Vermelho para limpar (C)
 val QuickAddColor = Color(0xFF00ACC1)      // Ciano para botões de atalho (+15m, +30m)
+val QuickAddContainerLight = Color(0xFFE0F7FA)  // Ciano claro sólido (Modo Claro)
+val QuickAddOnContainerLight = Color(0xFF006064) // Ciano escuro para texto legível (Modo Claro)
+val QuickAddContainerDark = Color(0xFF00363A)   // Ciano escuro sólido (Modo Escuro)
+val QuickAddOnContainerDark = Color(0xFF80DEEA)  // Ciano claro para texto legível (Modo Escuro)
 val CentesimalBadgeBg = Color(0xFF6366F1)  // Índigo para o badge de horas centesimais

@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.History
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -23,12 +24,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.hourcalculator.presentation.calculator.components.AboutDialog
 import com.example.hourcalculator.presentation.calculator.components.DisplaySection
 import com.example.hourcalculator.presentation.calculator.components.KeypadSection
 import com.example.hourcalculator.presentation.calculator.components.ModeSelector
 import com.example.hourcalculator.presentation.history.HistoryBottomSheet
 
-@OptIn(ExperimentalMaterial3Api::class)
+import androidx.compose.ui.tooling.preview.Preview
+import com.example.hourcalculator.ui.theme.HourCalculatorTheme
+
 @Composable
 fun CalculatorScreen(
     viewModel: CalculatorViewModel = viewModel(),
@@ -36,6 +40,20 @@ fun CalculatorScreen(
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
+    CalculatorContent(
+        uiState = uiState,
+        onEvent = viewModel::onEvent,
+        modifier = modifier
+    )
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun CalculatorContent(
+    uiState: CalculatorUiState,
+    onEvent: (CalculatorUiEvent) -> Unit,
+    modifier: Modifier = Modifier
+) {
     Scaffold(
         modifier = modifier.fillMaxSize(),
         topBar = {
@@ -48,7 +66,14 @@ fun CalculatorScreen(
                     )
                 },
                 actions = {
-                    IconButton(onClick = { viewModel.onEvent(CalculatorUiEvent.OnToggleHistory(true)) }) {
+                    IconButton(onClick = { onEvent(CalculatorUiEvent.OnToggleAbout(true)) }) {
+                        Icon(
+                            imageVector = Icons.Default.Info,
+                            contentDescription = "Sobre",
+                            tint = MaterialTheme.colorScheme.onBackground
+                        )
+                    }
+                    IconButton(onClick = { onEvent(CalculatorUiEvent.OnToggleHistory(true)) }) {
                         Icon(
                             imageVector = Icons.Default.History,
                             contentDescription = "Ver Histórico",
@@ -72,7 +97,7 @@ fun CalculatorScreen(
             ModeSelector(
                 currentMode = uiState.mode,
                 onModeSelected = { newMode ->
-                    viewModel.onEvent(CalculatorUiEvent.OnToggleMode(newMode))
+                    onEvent(CalculatorUiEvent.OnToggleMode(newMode))
                 }
             )
 
@@ -92,7 +117,7 @@ fun CalculatorScreen(
             KeypadSection(
                 mode = uiState.mode,
                 activeOperator = uiState.activeOperator,
-                onEvent = { event -> viewModel.onEvent(event) }
+                onEvent = onEvent
             )
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -102,10 +127,31 @@ fun CalculatorScreen(
         if (uiState.isHistoryOpen) {
             HistoryBottomSheet(
                 history = uiState.history,
-                onDismiss = { viewModel.onEvent(CalculatorUiEvent.OnToggleHistory(false)) },
-                onClearHistory = { viewModel.onEvent(CalculatorUiEvent.OnClearHistory) },
-                onSelectRecord = { record -> viewModel.onEvent(CalculatorUiEvent.OnSelectHistoryItem(record)) }
+                onDismiss = { onEvent(CalculatorUiEvent.OnToggleHistory(false)) },
+                onClearHistory = { onEvent(CalculatorUiEvent.OnClearHistory) },
+                onSelectRecord = { record -> onEvent(CalculatorUiEvent.OnSelectHistoryItem(record)) }
             )
         }
+
+        // Diálogo "Sobre"
+        if (uiState.isAboutOpen) {
+            AboutDialog(
+                onDismiss = { onEvent(CalculatorUiEvent.OnToggleAbout(false)) }
+            )
+        }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun CalculatorPreview() {
+    HourCalculatorTheme {
+        CalculatorContent(
+            uiState = CalculatorUiState(
+                primaryDisplay = "01:30",
+                secondaryDisplay = "1,50 h"
+            ),
+            onEvent = {}
+        )
     }
 }

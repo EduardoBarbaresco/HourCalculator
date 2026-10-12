@@ -49,6 +49,7 @@ class CalculatorViewModel(
             is CalculatorUiEvent.OnBackspaceClick -> handleBackspace()
             is CalculatorUiEvent.OnToggleMode -> handleToggleMode(event.mode)
             is CalculatorUiEvent.OnToggleHistory -> _uiState.update { it.copy(isHistoryOpen = event.isOpen) }
+            is CalculatorUiEvent.OnToggleAbout -> _uiState.update { it.copy(isAboutOpen = event.isOpen) }
             is CalculatorUiEvent.OnClearHistory -> handleClearHistory()
             is CalculatorUiEvent.OnSelectHistoryItem -> handleSelectHistoryItem(event.record)
         }

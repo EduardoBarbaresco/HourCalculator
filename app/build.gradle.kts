@@ -37,6 +37,16 @@ android {
     buildFeatures {
         compose = true
     }
+
+    // Configuração para renomear o arquivo APK gerado automaticamente
+    applicationVariants.all {
+        outputs.all {
+            val output = this as com.android.build.gradle.internal.api.ApkVariantOutputImpl
+            val variantName = name // debug ou release
+            val versionName = defaultConfig.versionName
+            output.outputFileName = "HourCalculator-v${versionName}-${variantName}.apk"
+        }
+    }
 }
 
 dependencies {

@@ -17,6 +17,7 @@ sealed interface CalculatorUiEvent {
     data object OnBackspaceClick : CalculatorUiEvent
     data class OnToggleMode(val mode: CalculatorMode) : CalculatorUiEvent
     data class OnToggleHistory(val isOpen: Boolean) : CalculatorUiEvent
+    data class OnToggleAbout(val isOpen: Boolean) : CalculatorUiEvent
     data object OnClearHistory : CalculatorUiEvent
     data class OnSelectHistoryItem(val record: CalculationRecord) : CalculatorUiEvent
 }
