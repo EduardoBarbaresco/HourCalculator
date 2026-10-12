@@ -1,10 +1,10 @@
-# ⏱ Calculadora de Horas & Centesimal para Android
+# Calculadora de Horas & Centesimal para Android
 
 Aplicativo Android nativo desenvolvido em **Kotlin** e **Jetpack Compose** (Material Design 3) para cálculos de horas em formato tradicional (Sexagesimal: `HH:MM`) e conversão em tempo real para Horas Centesimais (Decimais: `0,00 h`).
 
 ---
 
-## 🚀 Funcionalidades Principais
+## Funcionalidades Principais
 
 1. **Cálculo Sexagesimal e Centesimal**:
    - Operações básicas: Adição (`+`), Subtração (`-`), Multiplicação (`×`) e Divisão (`÷`).
@@ -21,7 +21,7 @@ Aplicativo Android nativo desenvolvido em **Kotlin** e **Jetpack Compose** (Mate
 
 ---
 
-## 🏛 Arquitetura e Tecnologias
+## Arquitetura e Tecnologias
 
 O projeto segue as diretrizes recomendadas pelo Google de **Clean Architecture** e **UDF (Unidirectional Data Flow)**:
 
@@ -42,7 +42,7 @@ O projeto segue as diretrizes recomendadas pelo Google de **Clean Architecture**
 
 ---
 
-## 📂 Estrutura de Pastas
+## Estrutura de Pastas
 
 ```
 app/src/main/java/com/example/hourcalculator/
@@ -80,7 +80,7 @@ app/src/main/java/com/example/hourcalculator/
 
 ---
 
-## 📱 Como Abrir e Executar no Android Studio
+## Como Abrir e Executar no Android Studio
 
 1. Abra o **Android Studio**.
 2. Selecione **File > Open** e navegue até a pasta `c:\Projetos\HourCalculator`.
